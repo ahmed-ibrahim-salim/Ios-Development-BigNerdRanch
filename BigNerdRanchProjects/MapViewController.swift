@@ -11,7 +11,20 @@ import MapKit
 class MapViewController: UIViewController {
     
     let mapView = MKMapView()
-
+    let locationManager = CLLocationManager()
+    var didFindLocation: Bool = false{
+        didSet{
+            guard didFindLocation == true else{ return }
+            locationManager.stopUpdatingLocation()
+            print("called stop")
+        }
+    }
+    var coordinate: CLLocationCoordinate2D?{
+        didSet{
+            setCamera()
+        }
+    }
+    
     override func loadView() {
         view = mapView
         
@@ -66,6 +79,16 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ConversionViewController loaded its view.")
+        
+        locationManager.requestWhenInUseAuthorization()
+        mapView.delegate = self
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            didFindLocation = false
+        }
     }
     @objc func pointOfinterestChanged(sw mySwitch: UISwitch ){
         if mySwitch.isOn{
@@ -83,6 +106,13 @@ class MapViewController: UIViewController {
 
         }
     }
+    func setCamera(){
+        print("called set camera")
+        if let coordinate = coordinate {
+            let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            mapView.setRegion(region, animated: true)
+        }
+    }
     @objc func mapTypeChanged(outer segmented: UISegmentedControl){
         switch segmented.selectedSegmentIndex{
         case 0:
@@ -93,6 +123,21 @@ class MapViewController: UIViewController {
             mapView.mapType = .satellite
         default:
             break
+        }
+    }
+}
+extension MapViewController: MKMapViewDelegate{
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        setCamera()
+    }
+}
+extension MapViewController: CLLocationManagerDelegate{
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let coordinate = manager.location?.coordinate{
+            self.coordinate = coordinate
+            didFindLocation = true
+            print("did update location")
+
         }
     }
 }

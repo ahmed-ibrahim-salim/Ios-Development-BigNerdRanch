@@ -15,6 +15,8 @@ class ConversionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ConversionViewController loaded its view.")
+        
+        textField.delegate = self
         updateCelciusLabel()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -44,15 +46,16 @@ class ConversionViewController: UIViewController {
     
     func updateCelciusLabel(){
         if let celciusValue = celciusValue {
-            degreeCelciusLbl.text = numberFormatter.string(from: NSNumber(value: celciusValue))
+            let num = NSNumber(value: celciusValue.value)
+            degreeCelciusLbl.text = numberFormatter.string(from: num)
         }else{
             degreeCelciusLbl.text = "???"
         }
     }
     
     @IBAction func txtfieldEditingDidChange(_ textField: UITextField) {
-        if let text = textField.text, let value = Double(text){
-            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+        if let text = textField.text, let number = numberFormatter.number(from: text){
+            fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         }else{
             fahrenheitValue = nil
         }
@@ -68,8 +71,35 @@ class ConversionViewController: UIViewController {
         let blueValue = CGFloat(drand48())
         
         let randomColor = UIColor(red: redValue, green: greenValue, blue: blueValue, alpha: 1.0)
-        
         return randomColor
+    }
+}
+
+extension ConversionViewController: UITextFieldDelegate{
+    // big nerd ranch page 132
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let currentLocale = Locale.current
+        let decimalSeperator = currentLocale.decimalSeparator ?? "."
+        // if existing has decimal point
+        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeperator)
+        // if the least also has a decimal point
+        let replacementTextHasDecimalSeparator = string.range(of: decimalSeperator)
+        
+        // if both have a decimal point then keep the old and do not accept the new decimal
+        if existingTextHasDecimalSeparator != nil,
+            replacementTextHasDecimalSeparator != nil {
+            return false
+        }
+        // given old input (which is correct), when recieves new input, checks to whether to change old input to new input or not (true change, false do not change)
+        // here disallowing letters, only can add numbers
+        let disAllowedChars = CharacterSet.letters
+        let replacementTextHasLetter = string.rangeOfCharacter(from: disAllowedChars)
+
+        if replacementTextHasLetter != nil{
+            return false
+        }
+        return true
     }
 }
 
