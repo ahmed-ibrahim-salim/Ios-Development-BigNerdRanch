@@ -12,15 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let itemStore = ItemStore()
+        let vc = window!.rootViewController as! ItemsViewController
+        vc.itemStore = itemStore
         return true
     }
-    
-//    func reset(){
-//        let rootViewController: UIWindow = ((UIApplication.shared.delegate?.window)!)!
-//        let story = UIStoryboard(name: "Main", bundle: nil)
-//        let root = story.instantiateViewController(withIdentifier: "main")
-//        rootViewController.rootViewController = root
-//    }
-
 }
 

@@ -79,19 +79,6 @@ extension ConversionViewController: UITextFieldDelegate{
     // big nerd ranch page 132
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        let currentLocale = Locale.current
-        let decimalSeperator = currentLocale.decimalSeparator ?? "."
-        // if existing has decimal point
-        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeperator)
-        // if the least also has a decimal point
-        let replacementTextHasDecimalSeparator = string.range(of: decimalSeperator)
-        
-        // if both have a decimal point then keep the old and do not accept the new decimal
-        if existingTextHasDecimalSeparator != nil,
-            replacementTextHasDecimalSeparator != nil {
-            return false
-        }
-        // given old input (which is correct), when recieves new input, checks to whether to change old input to new input or not (true change, false do not change)
         // here disallowing letters, only can add numbers
         let disAllowedChars = CharacterSet.letters
         let replacementTextHasLetter = string.rangeOfCharacter(from: disAllowedChars)
@@ -101,5 +88,23 @@ extension ConversionViewController: UITextFieldDelegate{
         }
         return true
     }
+        
+        
+//        let currentLocale = Locale.current
+//        let decimalSeperator = currentLocale.decimalSeparator ?? "."
+//        // if existing has decimal point
+//        let existingTextHasDecimalSeparator = textField.text?.range(of: decimalSeperator)
+//        // if the least also has a decimal point
+//        let replacementTextHasDecimalSeparator = string.range(of: decimalSeperator)
+//
+//        // if both have a decimal point then keep the old and do not accept the new decimal
+//        if existingTextHasDecimalSeparator != nil,
+//            replacementTextHasDecimalSeparator != nil {
+//            return false
+//        }
+        // given old input (which is correct), when recieves new input, checks to whether to change old input to new input or not (true change, false do not change)
+        
+        
+//    }
 }
 

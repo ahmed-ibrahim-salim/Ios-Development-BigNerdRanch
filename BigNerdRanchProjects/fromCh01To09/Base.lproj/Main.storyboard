@@ -12,6 +12,12 @@
         <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <tapGestureRecognizer id="1m5-w8-Xhm">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="QZw-gM-Y1y"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ConversionViewController" customModule="BigNerdRanchProjects" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vya-4M-4GW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -80,22 +86,16 @@
                         <outlet property="textField" destination="Et0-nx-K4m" id="2KU-F5-Zb6"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="1m5-w8-Xhm">
-                    <connections>
-                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="QZw-gM-Y1y"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="561" y="718"/>
         </scene>
         <!--Map-->
         <scene sceneID="4YE-Jz-sVg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bDw-QE-IVk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="SXG-FR-iuB" customClass="MapViewController" customModule="BigNerdRanchProjects" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="2i8-VS-qT8"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bDw-QE-IVk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1343" y="718"/>
         </scene>
@@ -116,7 +116,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NtB-Zp-Nx0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="48"/>
+            <point key="canvasLocation" x="1123" y="11"/>
         </scene>
     </scenes>
     <resources>
