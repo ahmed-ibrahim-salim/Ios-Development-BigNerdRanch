@@ -11,6 +11,7 @@
 		EF426D7328D3AF5000C9FE1A /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF426D7228D3AF5000C9FE1A /* ItemsViewController.swift */; };
 		EF426D7528D3AFA000C9FE1A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF426D7428D3AFA000C9FE1A /* Item.swift */; };
 		EF426D7728D3B1C600C9FE1A /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF426D7628D3B1C600C9FE1A /* ItemStore.swift */; };
+		EF609CA328D509A7002BB212 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF609CA228D509A7002BB212 /* ItemCell.swift */; };
 		FC2200AA27C4579A00ECDC94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2200A927C4579A00ECDC94 /* AppDelegate.swift */; };
 		FC2200AC27C4579A00ECDC94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2200AB27C4579A00ECDC94 /* SceneDelegate.swift */; };
 		FC2200AE27C4579A00ECDC94 /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2200AD27C4579A00ECDC94 /* ConversionViewController.swift */; };
@@ -25,6 +26,7 @@
 		EF426D7228D3AF5000C9FE1A /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		EF426D7428D3AFA000C9FE1A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EF426D7628D3B1C600C9FE1A /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		EF609CA228D509A7002BB212 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FC2200A627C4579A00ECDC94 /* BigNerdRanchProjects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BigNerdRanchProjects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2200A927C4579A00ECDC94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC2200AB27C4579A00ECDC94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 				EF426D6F28D3AE3700C9FE1A /* World.storyboard */,
 				EF426D7428D3AFA000C9FE1A /* Item.swift */,
 				EF426D7628D3B1C600C9FE1A /* ItemStore.swift */,
+				EF609CA228D509A7002BB212 /* ItemCell.swift */,
 			);
 			path = LootLogger;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF609CA328D509A7002BB212 /* ItemCell.swift in Sources */,
 				EF426D7328D3AF5000C9FE1A /* ItemsViewController.swift in Sources */,
 				EF426D7528D3AFA000C9FE1A /* Item.swift in Sources */,
 				FC2200AE27C4579A00ECDC94 /* ConversionViewController.swift in Sources */,
