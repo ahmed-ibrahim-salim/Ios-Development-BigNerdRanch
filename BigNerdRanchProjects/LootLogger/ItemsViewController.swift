@@ -19,6 +19,9 @@ class ItemsViewController: UIViewController {
         itemsTableView.delegate = self
         itemsTableView.dataSource = self
         
+        itemsTableView.rowHeight = UITableView.automaticDimension
+        itemsTableView.estimatedRowHeight = 65
+        
         print("Hello world")
     }
     
@@ -56,11 +59,15 @@ extension ItemsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //        let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell")!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         let item = itemStore.allItems[indexPath.row]
         
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$ \(item.valueInDollars)"
+        cell.serialNumberLabel.text = item.serialNumber
+        cell.nameLabel.text = item.name
+        
+        
+        cell.valueLabel.text = "$ \(item.valueInDollars)"
         return cell
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
