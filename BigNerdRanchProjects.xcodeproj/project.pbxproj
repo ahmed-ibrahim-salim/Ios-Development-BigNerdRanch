@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF3CA34328D5E15B0052C518 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3CA34228D5E15B0052C518 /* DetailViewController.swift */; };
 		EF426D7028D3AE3700C9FE1A /* World.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF426D6F28D3AE3700C9FE1A /* World.storyboard */; };
 		EF426D7328D3AF5000C9FE1A /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF426D7228D3AF5000C9FE1A /* ItemsViewController.swift */; };
 		EF426D7528D3AFA000C9FE1A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF426D7428D3AFA000C9FE1A /* Item.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EF3CA34228D5E15B0052C518 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EF426D6F28D3AE3700C9FE1A /* World.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = World.storyboard; sourceTree = "<group>"; };
 		EF426D7228D3AF5000C9FE1A /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		EF426D7428D3AFA000C9FE1A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				EF426D7428D3AFA000C9FE1A /* Item.swift */,
 				EF426D7628D3B1C600C9FE1A /* ItemStore.swift */,
 				EF609CA228D509A7002BB212 /* ItemCell.swift */,
+				EF3CA34228D5E15B0052C518 /* DetailViewController.swift */,
 			);
 			path = LootLogger;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF3CA34328D5E15B0052C518 /* DetailViewController.swift in Sources */,
 				EF609CA328D509A7002BB212 /* ItemCell.swift in Sources */,
 				EF426D7328D3AF5000C9FE1A /* ItemsViewController.swift in Sources */,
 				EF426D7528D3AFA000C9FE1A /* Item.swift in Sources */,

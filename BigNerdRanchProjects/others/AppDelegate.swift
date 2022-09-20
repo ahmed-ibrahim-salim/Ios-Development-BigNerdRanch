@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let itemStore = ItemStore()
-        let vc = window!.rootViewController as! ItemsViewController
+        let navigationController = window!.rootViewController as! UINavigationController
+        let vc = navigationController.topViewController as!     ItemsViewController
         vc.itemStore = itemStore
         return true
     }
